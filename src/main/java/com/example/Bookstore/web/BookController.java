@@ -39,12 +39,6 @@ public class BookController {
 		return " redirect:/bookList";
 	}
 	
-	@Bean
-	public CommandLineRunner books(Book book) {
-		return(args)->{
-			
-		};
-	}
 
 	
 }

@@ -10,7 +10,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import com.example.Bookstore.domain.Book
 import com.example.Bookstore.domain.BookRepository;
+
 
 
 
@@ -32,7 +34,7 @@ public class BookstoreApplication {
 			log.info("save some books");
 			bookRepository.save(new Book("A Farewell to Arms","Ernest Hemmingway", 1929 ,"123123123-21", 10.0 ));
 			bookRepository.save(new Book("Animal Farm", "George Orwell", 1945,"221332112-5", 20.0));
-			bookRepository.save
+			
 			
 			log.info("tulostetaan kirjat");
 			for (Book book : bookRepository.findAll()) {
