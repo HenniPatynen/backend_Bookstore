@@ -1,6 +1,6 @@
 package com.example.Bookstore;
 
-import java.awt.print.Book;
+import com.example.Bookstore.domain.Book;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,7 +10,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import com.example.Bookstore.domain.Book
 import com.example.Bookstore.domain.BookRepository;
 
 
@@ -41,7 +40,5 @@ public class BookstoreApplication {
 				log.info(book.toString());
 			}
 			
-			
-		};
-	}
-}
+		};}}
+

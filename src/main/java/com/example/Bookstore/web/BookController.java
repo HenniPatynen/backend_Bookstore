@@ -3,12 +3,11 @@ package com.example.Bookstore.web;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.Bookstore.domain.Book;
@@ -36,9 +35,27 @@ public class BookController {
 	@GetMapping("delete/{id}")
 	public String deleteBook(@PathVariable("id") Long id, Model model) {
 		bookRepository.deleteById(id);
-		return " redirect:/bookList";
+		return " redirect: /booklist";
 	}
 	
+	@GetMapping("/edit/{id}")
+	public String editBook(@PathVariable("id") Long id, Model model) {
+		model.addAttribute("book", bookRepository.findById(id));
+		return "editBook";
+	}
 
+	@GetMapping("/addBook")
+	public String newBook(Model model) {
+		model.addAttribute("book", new Book());
+		return "addBook";
+	}
+	
+	@PostMapping("saveBook")
+	public String saveBook(Book book, Model model) {
+		bookRepository.save(book);
+		return "redirect: /booklist";
+	}
+	
+	
 	
 }
