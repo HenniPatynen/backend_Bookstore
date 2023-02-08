@@ -36,8 +36,8 @@ xmlns:th="http://www.thymeleaf.org">
 		</p>	
 		<p>	
 			<label>Category</label>
-			<select id="categories" th:field="*{categories}">
-				<option th:each="cateogry: ${categories}" th:value="${category.id}"th:text="${category.name}"></option>
+			<select id="category" th:field="*{category}">
+				<option th:each="category: ${categories}" th:value="${category.id}" th:text="${category.name}"></option>
 			</select>
 				
 		</p>
